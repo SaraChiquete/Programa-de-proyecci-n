@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Aliento de Vida logo">
+  <defs>
+    <linearGradient id="bgRing" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7cd8ff"/>
+      <stop offset="100%" stop-color="#3f66df"/>
+    </linearGradient>
+    <linearGradient id="bgInner" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f6f6f6"/>
+      <stop offset="100%" stop-color="#eaeaea"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#7fd7ff"/>
+      <stop offset="100%" stop-color="#4d9dff"/>
+    </linearGradient>
+    <linearGradient id="vidaBase" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fffdfd"/>
+      <stop offset="30%" stop-color="#f6d9d4"/>
+      <stop offset="100%" stop-color="#dfe8ff"/>
+    </linearGradient>
+    <clipPath id="clipVida">
+      <text x="450" y="560" text-anchor="middle" font-size="430" font-weight="700" font-family="Georgia, 'Times New Roman', serif" fill="#fff">VIDA</text>
+    </clipPath>
+    <style>
+      .title { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 700; fill: #41baf5; }
+      .small { font-family: Georgia, 'Times New Roman', serif; letter-spacing: 8px; font-size: 64px; fill: #2d5de1; font-weight: 700; }
+      .yellow { fill: #f8d95f; }
+      .orange { fill: #f7a643; }
+      .red { fill: #ea6d66; }
+      .pink { fill: #d9497b; }
+      .purple { fill: #4b2c8b; }
+      .blue { fill: #2f5fd4; }
+      .deepBlue { fill: #1c3d91; }
+    </style>
+  </defs>
+
+  <circle cx="450" cy="450" r="380" fill="url(#bgRing)" stroke="#6ecdf9" stroke-width="12"/>
+  <circle cx="450" cy="450" r="335" fill="url(#bgInner)"/>
+
+  <path d="M150 330 C 265 230, 385 230, 450 250 C 515 270, 612 260, 670 328" fill="none" stroke="url(#waveGrad)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M200 300 C 265 260, 345 260, 415 280 C 485 300, 605 300, 665 258" fill="none" stroke="#dfeeff" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+
+  <text x="450" y="275" text-anchor="middle" class="title" font-size="98" fill="#4ab7e9">Aliento de</text>
+
+  <g clip-path="url(#clipVida)">
+    <rect x="145" y="230" width="610" height="390" fill="url(#vidaBase)"/>
+    <polygon points="150,600 250,480 350,600" class="yellow"/>
+    <polygon points="250,480 350,600 450,470" class="orange"/>
+    <polygon points="350,600 450,470 510,600" class="red"/>
+    <polygon points="450,470 560,600 640,470" class="pink"/>
+    <polygon points="510,600 640,470 700,600" class="purple"/>
+    <polygon points="150,600 250,480 215,390 85,510" class="yellow"/>
+    <polygon points="215,390 250,480 350,600 315,400" class="orange"/>
+    <polygon points="315,400 350,600 450,470 410,350" class="red"/>
+    <polygon points="410,350 450,470 560,600 520,320" class="pink"/>
+    <polygon points="520,320 560,600 700,600 640,310" class="purple"/>
+    <polygon points="150,600 250,500 200,600" class="yellow"/>
+    <polygon points="180,600 250,500 330,600" class="orange"/>
+    <polygon points="330,600 450,470 440,600" class="pink"/>
+    <polygon points="440,600 510,470 600,600" class="purple"/>
+    <polygon points="600,600 640,470 700,600" class="blue"/>
+    <polygon points="150,600 260,520 170,450 95,550" class="deepBlue" opacity="0.8"/>
+    <polygon points="95,550 170,450 260,520 200,610" class="blue" opacity="0.85"/>
+    <polygon points="260,520 350,600 315,430 200,610" class="deepBlue" opacity="0.9"/>
+    <polygon points="315,430 350,600 450,470 405,330" class="blue" opacity="0.8"/>
+    <polygon points="405,330 450,470 560,600 520,330" class="deepBlue" opacity="0.85"/>
+    <polygon points="520,330 560,600 700,600 645,340" class="blue" opacity="0.8"/>
+  </g>
+
+  <g opacity="0.98">
+    <path d="M730 290 L770 250 L810 290 L770 330 Z" fill="#f2d862"/>
+    <path d="M145 290 L185 250 L225 290 L185 330 Z" fill="#f2d862"/>
+    <path d="M350 290 L390 250 L430 290 L390 330 Z" fill="#f2d862"/>
+    <path d="M520 290 L560 250 L600 290 L560 330 Z" fill="#f2d862"/>
+  </g>
+
+  <text x="450" y="715" text-anchor="middle" class="small">IGLESIA FAMILIAR</text>
+</svg>

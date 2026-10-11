@@ -1,0 +1,36 @@
+PRAGMA foreign_keys = ON;
+CREATE TABLE IF NOT EXISTS backgrounds (
+  id INTEGER PRIMARY KEY, name TEXT NOT NULL,
+  kind TEXT NOT NULL CHECK(kind IN ('image','color','gradient')),
+  value TEXT NOT NULL, category TEXT DEFAULT 'general',
+  is_dark INTEGER DEFAULT 1, is_custom INTEGER DEFAULT 0, is_favorite INTEGER DEFAULT 0);
+CREATE TABLE IF NOT EXISTS songs (
+  id INTEGER PRIMARY KEY, title TEXT NOT NULL, artist TEXT, category TEXT,
+  lyrics TEXT, background_id INTEGER REFERENCES backgrounds(id) ON DELETE SET NULL,
+  is_favorite INTEGER DEFAULT 0, created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS song_slides (
+  id INTEGER PRIMARY KEY, song_id INTEGER NOT NULL REFERENCES songs(id) ON DELETE CASCADE,
+  position INTEGER NOT NULL, text TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS bible_versions (
+  id INTEGER PRIMARY KEY, code TEXT UNIQUE NOT NULL, name TEXT NOT NULL, license_note TEXT);
+CREATE TABLE IF NOT EXISTS bible_books (
+  id INTEGER PRIMARY KEY, number INTEGER UNIQUE NOT NULL, name TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS bible_verses (
+  version_id INTEGER NOT NULL REFERENCES bible_versions(id) ON DELETE CASCADE,
+  book_id INTEGER NOT NULL REFERENCES bible_books(id),
+  chapter INTEGER NOT NULL, verse INTEGER NOT NULL, text TEXT NOT NULL,
+  PRIMARY KEY (version_id, book_id, chapter, verse));
+CREATE TABLE IF NOT EXISTS reflections (
+  id INTEGER PRIMARY KEY, title TEXT NOT NULL, body TEXT, author TEXT, date TEXT,
+  category TEXT, background_id INTEGER REFERENCES backgrounds(id) ON DELETE SET NULL);
+CREATE TABLE IF NOT EXISTS services (
+  id INTEGER PRIMARY KEY, name TEXT NOT NULL, date TEXT);
+CREATE TABLE IF NOT EXISTS service_items (
+  id INTEGER PRIMARY KEY, service_id INTEGER NOT NULL REFERENCES services(id) ON DELETE CASCADE,
+  position INTEGER NOT NULL, type TEXT NOT NULL, ref_id TEXT, label TEXT);
+CREATE TABLE IF NOT EXISTS favorites (
+  id INTEGER PRIMARY KEY, type TEXT NOT NULL, ref TEXT NOT NULL, label TEXT);
+CREATE TABLE IF NOT EXISTS history (
+  id INTEGER PRIMARY KEY, type TEXT NOT NULL, ref TEXT NOT NULL, label TEXT,
+  used_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT);

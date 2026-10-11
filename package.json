@@ -1,0 +1,48 @@
+{
+  "name": "proyector-iglesia",
+  "version": "0.1.0",
+  "description": "Proyector Iglesia",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "electron-builder --publish never"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "org.iglesia.proyector",
+    "productName": "Proyector Iglesia",
+    "files": [
+      "electron/**",
+      "renderer/**",
+      "projection/**",
+      "shared/**",
+      "resources/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "Proyector-Iglesia-Setup.${ext}"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Office"
+    }
+  }
+}

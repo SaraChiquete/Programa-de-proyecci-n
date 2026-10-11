@@ -1,0 +1,29 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Aliento de Vida</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,sans-serif;background:#0f1115;color:#e8eaed;display:grid;grid-template-columns:360px 1fr 390px;height:100vh}
+nav{background:#161a21;padding:14px 18px;min-width:360px;width:360px}nav .brand{display:flex;align-items:center;gap:12px;margin:0 0 14px 0;width:100%;min-height:54px;white-space:nowrap;overflow:hidden}nav .brand img{width:46px;height:46px;border-radius:10px;box-shadow:0 8px 18px rgba(0,0,0,.25);flex-shrink:0}nav .brand > div{flex:1;min-width:0}nav .brand h3{margin:0;font-size:1rem;line-height:1.12;font-weight:700;letter-spacing:.15px}nav .brand small{display:block;color:#9ab1c9;margin-top:1px;font-size:.68rem;line-height:1.08}nav div{padding:11px 12px;border-radius:8px;margin-bottom:4px;cursor:pointer}
+nav div:hover{background:#222833}nav .on{background:#2563eb}
+main{display:flex;flex-direction:column;overflow:hidden}#page{padding:20px;overflow:auto;flex:1}#slides{padding:14px 20px;border-top:1px solid #262c38;height:36%;overflow:auto;background:#12151b}
+aside{background:#161a21;padding:16px;overflow:auto}
+input,select,textarea{background:#222833;color:#fff;border:1px solid #333b4a;border-radius:8px;padding:9px;font:inherit;max-width:100%}textarea{width:100%}
+button{border:0;border-radius:9px;padding:10px 14px;font:inherit;cursor:pointer;color:#fff;background:#2d3748}button:hover{background:#3b4760}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}.row input:not([type=checkbox]){flex:1;min-width:120px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.card{background:#1b2029;border:1px solid #2a3140;border-radius:10px;padding:10px}.sl{cursor:pointer;position:relative}.sl p{margin:6px 0;white-space:pre-line;font-size:13px}
+.sel{border-color:#2563eb;box-shadow:0 0 0 2px #2563eb}.air{position:absolute;top:6px;right:6px;background:#16a34a;font-size:10px;padding:2px 6px;border-radius:6px;font-weight:700}
+.th{height:70px;border-radius:8px;margin-bottom:6px;cursor:pointer;background-size:cover}.mut,small{color:#8b95a7}
+#pv{width:100%;aspect-ratio:16/9;border:1px solid #333;border-radius:10px;background:#000}
+#go{width:100%;background:#2563eb;font-size:22px;font-weight:800;padding:16px;margin:10px 0}#go:hover{background:#1d4ed8}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}#live{font-weight:700;margin:6px 0;color:#22c55e}
+label.f{display:grid;grid-template-columns:150px 1fr;gap:8px;align-items:center;margin:6px 0}
+</style></head><body>
+<nav><div class="brand"><img src="../resources/LOGO.png" alt="Logo Aliento de Vida"><div><h3>Aliento de Vida</h3><small>Programa de proyección</small></div></div><div id="nv"></div></nav>
+<main><div id="page"></div><div id="slides"></div></main>
+<aside><iframe id="pv" src="../projection/projection.html"></iframe>
+<div id="live">Proyección apagada</div>
+<button id="go" onclick="projectNow()">PROYECTAR</button>
+<div class="two"><button onclick="go(-1)">◀ Anterior</button><button onclick="go(1)">Siguiente ▶</button>
+<button onclick="mode('hidden')">Ocultar (H)</button><button onclick="mode('black')">Pantalla negra (B)</button>
+<button onclick="stop()">Detener (Esc)</button><button onclick="favCur()">⭐ Favorito</button></div>
+<small id="msg"></small></aside>
+<script src="app.js"></script></body></html>
